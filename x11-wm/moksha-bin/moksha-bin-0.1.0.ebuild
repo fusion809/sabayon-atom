@@ -8,9 +8,12 @@ inherit flag-o-matic eutils unpacker
 
 DESCRIPTION="Lightweight Window Manager forked from E17"
 HOMEPAGE="http://mokshadesktop.org"
-SRC_URI="http://packages.bodhilinux.com/bodhi/pool/main/m/moksha/moksha_20150806.3-1_amd64.deb -> moksha-${PV}.deb"
+SRC_URI="
+    x86?   ( http://packages.bodhilinux.com/bodhi/pool/main/m/moksha/moksha_20150806.3-1_i386.deb -> moksha-${PV}.deb )
+    AMD64? ( http://packages.bodhilinux.com/bodhi/pool/main/m/moksha/moksha_20150806.3-1_amd64.deb -> moksha-${PV}.deb) )"
+
 RESTRICT="mirror"
-KEYWORDS="~amd64"
+KEYWORDS="~x86 ~amd64"
 SLOT="0"
 LICENSE="BSD"
 IUSE=""
