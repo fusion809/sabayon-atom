@@ -9,15 +9,15 @@ layman -a sabayon-tools
 [kde-apps/ffmpegthumbs-mattepaint][2] is a program that when installed (and enabled by going to **Control**&rarr;**Configure Dolphin...**&rarr;**General**&rarr;**Previews** and selecting in the "Show previews for:" box, "Video Files (ffmpegthumbs-mattepaint)") should allow video file thumbnailing (or previews) in Dolphin.
 
 ### [Onboard][3]
-[app-accessibility/onboard][4] is an on-screen virtual keyboard that is developed for Ubuntu, although via the [`unity-gentoo`][5] and [`lif`][6] overlays it has also been ported to Gentoo-based platforms, such as Sabayon. I use it primarily when my cat jumps on me for scratches, which leaves me just one hand spare to use my laptop. I touch-type fairly well with two hands but poorly with just one.
+[app-accessibility/onboard][4] is an on-screen virtual keyboard that is developed for Ubuntu, although via the [`unity-gentoo`][5] and [`lif`][6] overlays it has also been ported to Gentoo-based platforms, such as Sabayon. I use it primarily when my cat jumps on me for scratches, which leaves me just one hand spare to use my laptop. I touch-type fairly well with two hands but poorly with just one, so onboard can help improve my one-handed typing performance.
 
 ## Binary packages
-Using these tools I also build a SPM `.tbz2` package that I upload to my dropbox. You can install these packages, after you download them, of course, by running (as root):
+Using these tools I also build a SPM `tbz2` package that I upload to my dropbox. You can install these packages, after you download them, of course, by running (as root):
 ```sh
-mv <PACKAGE>.tbz2 /var/lib/entropy/smartpackages/amd64
-equo i -av <PACKAGE>.tbz2
+mv <PACKAGE> /var/lib/entropy/smartpackages/amd64
+equo i -av <PACKAGE>
 ```
-
+although it is important to ensure their file extension is `.tbz2`, downloading from my dropbox will likely give you a file name ending with `?dl=1`, which you will need to remove in order to install the binary with `equo`.
 ### List of binaries I have made
 * [Atom][7]: [atom-bin-1.2.2][8]
 * [Onboard][3]: [onboard-1.1.2][14]
@@ -25,7 +25,7 @@ equo i -av <PACKAGE>.tbz2
 * [Unix RuneScape Client][11]:
  - [unix-runescape-client-4.3.4][12]
  - [unix-runescape-client-4.3.5][13]
-
+* [wkhtmltopdf][15]: [wkhtmltopdf-0.12.2.4][16]
 
 [1]: http://kde-apps.org/content/show.php/FFMpegThumbs-MattePaint?content=153902 "FFMpegThumbs-MattePaint Homepage"
 [2]: https://github.com/fusion809/sabayon-tools/tree/master/kde-apps/ffmpegthumbs-mattepaint "kde-apps/ffmpegthumbs-mattepaint"
@@ -41,3 +41,5 @@ equo i -av <PACKAGE>.tbz2
 [12]: https://www.dropbox.com/s/vs3j3928jj7mil4/games-rpg%3Aunix-runescape-client-4.3.4.2058d145e7f2676d8e00a98be6f6cae8665568b4~9999.tbz2?dl=1
 [13]: https://www.dropbox.com/s/kn5cgn9eu69sc2g/games-rpg%3Aunix-runescape-client-4.3.5.29eacce023501ebb137ffc45952095220e909dc4~9999.tbz2?dl=1
 [14]: https://www.dropbox.com/s/imh3i216vzbu89j/app-accessibility%3Aonboard-1.1.2.d834ceb46e7f23f9284240fade30e80019a22977~9999.tbz2?dl=1
+[15]: http://wkhtmltopdf.org/
+[16]: https://www.dropbox.com/s/egc667ie4d59p7d/media-gfx%3Awkhtmltopdf-0.12.2.4.bc0c8c3a63799f9ddfc7ab357d28a4abb9678085~9999.tbz2?dl=1
