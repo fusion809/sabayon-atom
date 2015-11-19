@@ -36,10 +36,6 @@ pkg_setup() {
 	npm config set python $PYTHON
 }
 
-src_unpack() {
-	git-r3_src_unpack
-}
-
 src_prepare(){
 	epatch "${FILESDIR}/${PN}-python.patch"
 	epatch "${FILESDIR}/${PN}-package.patch"
