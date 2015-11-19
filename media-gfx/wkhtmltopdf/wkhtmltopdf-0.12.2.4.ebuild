@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}"
 
 src_prepare() {
 	# fix install paths and don't precompress man pages
-	epatch "${FILESDIR}"/${PN}-0.12.1.2-manpages.patch
+	epatch "${FILESDIR}"/${PN}-${PV}-manpages.patch
 
 	sed -i "s:\(INSTALLBASE/\)lib:\1$(get_libdir):" src/lib/lib.pro || die
 }
