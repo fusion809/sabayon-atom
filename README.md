@@ -6,7 +6,7 @@ layman -o http://github.com/fusion809/sabayon-tools/raw/master/overlays.xml -f -
 
 ## ebuilds
 ### [FFMpegThumbs-MattePaint][1]
-[kde-apps/ffmpegthumbs-mattepaint][2] is a program that when installed (and enabled in Dolphin by going to **Control**&rarr;**Configure Dolphin...**&rarr;**General**&rarr;**Previews** and selecting in the "Show previews for:" box, "Video Files (ffmpegthumbs-mattepaint)").
+[kde-apps/ffmpegthumbs-mattepaint][2] is a program that when installed (and enabled by going to **Control**&rarr;**Configure Dolphin...**&rarr;**General**&rarr;**Previews** and selecting in the "Show previews for:" box, "Video Files (ffmpegthumbs-mattepaint)") should allow video file thumbnailing (or previews) in Dolphin. 
 
 ### [Onboard][3]
 [app-accessibility/onboard][4] is an on-screen virtual keyboard that is developed for Ubuntu, although via the [`unity-gentoo`][5] and [`lif`][6] overlays it has also been ported to Gentoo-based platforms, such as Sabayon. I use it primarily when my cat jumps on me for scratches, which leaves me just one hand spare to use my laptop. I touch-type fairly well with two hands but poorly with just one.
