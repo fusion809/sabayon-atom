@@ -9,11 +9,8 @@ inherit git-r3 flag-o-matic python-any-r1 eutils
 
 DESCRIPTION="A hackable text editor for the 21st Century"
 HOMEPAGE="https://atom.io"
-SRC_URI=""
-
-EGIT_REPO_URI="https://github.com/${PN}/${PN}"
-EGIT_COMMIT="v${PV}"
-
+SRC_URI="https://github.com/${PN}/${PN}/archive/v${PV}.tar.gz"
+RESTRICT="mirror"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
