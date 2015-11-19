@@ -38,7 +38,6 @@ pkg_setup() {
 
 src_prepare(){
 	epatch "${FILESDIR}/${PN}-python.patch"
-	epatch "${FILESDIR}/${PN}-package.patch"
 	sed -i  -e "/exception-reporting/d" \
 		-e "/metrics/d" package.json
 	sed -e "s/<%= description %>/$pkgdesc/" \
