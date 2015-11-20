@@ -5,11 +5,17 @@ layman -a sabayon-tools
 ```
 
 ## ebuilds
+### [Atom][7]
+[app-editors/atom-bin][17] is designed to install Atom from official Debian package releases. I do not use [app-editors/atom][18] to build binaries because it is more likely to generate build errors and takes over an hour.
+
 ### [FFMpegThumbs-MattePaint][1]
 [kde-apps/ffmpegthumbs-mattepaint][2] is a program that when installed (and enabled by going to **Control**&rarr;**Configure Dolphin...**&rarr;**General**&rarr;**Previews** and selecting in the "Show previews for:" box, "Video Files (ffmpegthumbs-mattepaint)") should allow video file thumbnailing (or previews) in Dolphin.
 
 ### [Onboard][3]
 [app-accessibility/onboard][4] is an on-screen virtual keyboard that is developed for Ubuntu, although via the [`unity-gentoo`][5] and [`lif`][6] overlays it has also been ported to Gentoo-based platforms, such as Sabayon. I use it primarily when my cat jumps on me for scratches, which leaves me just one hand spare to use my laptop. I touch-type fairly well with two hands but poorly with just one, so onboard can help improve my one-handed typing performance.
+
+### [wkhtmltopdf][15]
+[media-gfx/wkhtmltopdf][19] is a command-line tool for converting HTML webpages to PDF format. 
 
 ## Binary packages
 Using these tools I also build a SPM `tbz2` package that I upload to my dropbox. You can install these packages, after you download them, of course, by running (as root):
@@ -43,3 +49,6 @@ although it is important to ensure their file extension is `.tbz2`, downloading 
 [14]: https://www.dropbox.com/s/imh3i216vzbu89j/app-accessibility%3Aonboard-1.1.2.d834ceb46e7f23f9284240fade30e80019a22977~9999.tbz2?dl=1
 [15]: http://wkhtmltopdf.org/
 [16]: https://www.dropbox.com/s/egc667ie4d59p7d/media-gfx%3Awkhtmltopdf-0.12.2.4.bc0c8c3a63799f9ddfc7ab357d28a4abb9678085~9999.tbz2?dl=1
+[17]: https://github.com/fusion809/sabayon-tools/tree/master/app-editors/atom-bin
+[18]: https://github.com/fusion809/sabayon-tools/tree/master/app-editors/atom
+[19]: https://github.com/fusion809/sabayon-tools/tree/master/media-gfx/wkhtmltopdf
