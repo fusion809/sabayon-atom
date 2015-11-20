@@ -44,22 +44,3 @@ src_install()
 		done
 	fi
 }
-
-pkg_postinst()
-{
-	elog ""
-	elog "*** ${PN} was successfully installed. ***"
-	elog "Type \"multimarkdown -h\" or \"multimarkdown file.txt\" to start using it."
-	if use shortcuts; then
-		elog "The following additional shortcuts were also installed:"
-		elog "${SHORTCUTS_LIST}."
-		elog "The shortcut \"mmd\" was not installed due to known file"
-		elog "collision with sys-fs/mtools on file /usr/bin/mmd"
-	fi
-	elog ""
-}
-
-pkg_info()
-{
-	einfo "`${ROOT}${DEST_DIR_EXE}/multimarkdown -v`"
-}
