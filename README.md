@@ -15,7 +15,7 @@ layman -a sabayon-tools
 [app-accessibility/onboard][4] is an on-screen virtual keyboard that is developed for Ubuntu, although via the [`unity-gentoo`][5] and [`lif`][6] overlays it has also been ported to Gentoo-based platforms, such as Sabayon. I use it primarily when my cat jumps on me for scratches, which leaves me just one hand spare to use my laptop. I touch-type fairly well with two hands but poorly with just one, so onboard can help improve my one-handed typing performance.
 
 ### [wkhtmltopdf][15]
-[media-gfx/wkhtmltopdf][19] is a command-line tool for converting HTML webpages to PDF format. 
+[media-gfx/wkhtmltopdf][19] is a command-line tool for converting HTML webpages to PDF format.
 
 ## Binary packages
 Using these tools I also build a SPM `tbz2` package that I upload to my dropbox. You can install these packages, after you download them, of course, by running (as root):
@@ -40,11 +40,11 @@ although it is important to ensure their file extension is `.tbz2`, downloading 
 [5]: https://github.com/shiznix/unity-gentoo "unity-gentoo overlay"
 [6]: https://github.com/killer2tester/gentoo-overlay-lif "lif overlay"
 [7]: https://atom.io "Atom Homepage"
-[8]: https://www.dropbox.com/s/sgs8tp42bscudh8/app-editors%3Aatom-bin-1.2.2.98b318676ff357a385e1a37384a608f3f3d238cd~9999.tbz2?dl=1 "atom-bin-1.2.2.tbz2"
+[8]: https://www.dropbox.com/s/sgs8tp42bscudh8/app-editors%3Aatom-bin-1.2.2.98b318676ff357a385e1a37384a608f3f3d238cd~9999.tbz2?dl=1 "atom-bin-1.2.2"
 [9]: http://www.scilab.org/ "Scilab Homepage"
 [10]: https://www.dropbox.com/s/yvchmmmh7p9xr4t/sci-mathematics%3Ascilab-bin-5.5.2.5b475dc664c2b92996a1ea93d1d9311582acc19c~9999.tbz2?dl=1 "scilab-bin-5.5.2.tbz2"
-[11]: https://github.com/HikariKnight/rsu-client
-[12]: https://www.dropbox.com/s/vs3j3928jj7mil4/games-rpg%3Aunix-runescape-client-4.3.4.2058d145e7f2676d8e00a98be6f6cae8665568b4~9999.tbz2?dl=1
+[11]: https://github.com/HikariKnight/rsu-client "RSU Client"
+[12]: https://www.dropbox.com/s/vs3j3928jj7mil4/games-rpg%3Aunix-runescape-client-4.3.4.2058d145e7f2676d8e00a98be6f6cae8665568b4~9999.tbz2?dl=1 "unix-runescape-client-4.3.4"
 [13]: https://www.dropbox.com/s/kn5cgn9eu69sc2g/games-rpg%3Aunix-runescape-client-4.3.5.29eacce023501ebb137ffc45952095220e909dc4~9999.tbz2?dl=1
 [14]: https://www.dropbox.com/s/imh3i216vzbu89j/app-accessibility%3Aonboard-1.1.2.d834ceb46e7f23f9284240fade30e80019a22977~9999.tbz2?dl=1
 [15]: http://wkhtmltopdf.org/
