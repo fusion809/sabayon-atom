@@ -9,19 +9,15 @@
 		<description>Proxied maintainer. Assign bugs to him</description>
 	</maintainer>
 </pkgmetadata>
-<maintainer>
-    <email>enlightenment@gentoo.org</email>
-    <description>Maintainer for enlightenment:0.17</description>
-  </maintainer>
-  <longdescription>
-Moksha (A Fork of Enlightenment D17) is a completely themeable, highly configurable Window Manager for 
+<longdescription>
+Moksha (A Fork of Enlightenment D17) is a completely themeable, highly configurable Window Manager for
 the X Window System, traditionally used in Unix environments.
 
 Moksha  Features:
 * Fully configurable window borders
 * Iconboxes to store icons in
 * Graphical Pager that also does miniature snapshots of your screen
-* IPC mechanism to remote-control Moksha 
+* IPC mechanism to remote-control Moksha
 * Theme support
 * Menus
 * Translucent moving of windows
