@@ -27,6 +27,6 @@ src_configure() {
 
 src_compile() {
   pushd $S
-	V=1 emake || die
+	make && sudo make install
   popd
 }
