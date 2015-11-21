@@ -16,7 +16,7 @@ SLOT="0"
 
 RDEPEND="x11-wm/moksha"
 DEPEND="${RDEPEND}
-        sys-libs/libstdc++"
+        sys-libs/libstdc++-v3"
 
 S=${WORKDIR}/moksha-modules-extra-master/deskshow
 
