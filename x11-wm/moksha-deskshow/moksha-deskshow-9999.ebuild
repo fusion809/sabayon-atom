@@ -17,7 +17,7 @@ SLOT="0"
 RDEPEND="x11-wm/moksha"
 DEPEND="${RDEPEND}"
 
-S=${WORKDIR}/moksha-modules-extra-master/${PN}
+S=${WORKDIR}/moksha-modules-extra-master/deskshow
 
 src_prepare() {
   if [[ ${WANT_AUTOTOOLS} == "yes" ]] ; then
