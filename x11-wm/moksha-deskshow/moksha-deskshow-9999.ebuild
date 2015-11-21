@@ -19,22 +19,9 @@ DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/moksha-modules-extra-master/deskshow
 
-src_prepare() {
-  if [[ ${WANT_AUTOTOOLS} == "yes" ]] ; then
-		[[ -d po ]] && eautopoint -f
-		# autotools require README, when README.in is around, but README
-		# is created later in configure step
-		[[ -f README.in ]] && touch README
-		export SVN_REPO_PATH=${ESVN_WC_PATH}
-		eautoreconf
-	fi
-	epunt_cxx
-	elibtoolize
-}
-
 src_configure() {
   pushd $S
-  econf ${MY_ECONF} "${E_ECONF[@]}"
+  ./autogen.sh --prefix=/usr
   popd
 }
 
