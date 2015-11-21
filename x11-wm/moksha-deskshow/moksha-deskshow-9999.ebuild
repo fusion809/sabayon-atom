@@ -15,7 +15,8 @@ KEYWORDS="~amd64 ~arm ~x86"
 SLOT="0"
 
 RDEPEND="x11-wm/moksha"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+        sys-libs/libstdc++"
 
 S=${WORKDIR}/moksha-modules-extra-master/deskshow
 
@@ -27,6 +28,6 @@ src_configure() {
 
 src_compile() {
   pushd $S
-	make && sudo make install
+	V=1 emake || die
   popd
 }
