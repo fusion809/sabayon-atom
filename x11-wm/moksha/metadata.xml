@@ -8,8 +8,7 @@
 		<name>Brenton Horne</name>
 		<description>Proxied maintainer. Assign bugs to him</description>
 	</maintainer>
-</pkgmetadata>
-<longdescription>
+	<longdescription>
 Moksha (A Fork of Enlightenment D17) is a completely themeable, highly configurable Window Manager for
 the X Window System, traditionally used in Unix environments.
 
@@ -50,7 +49,7 @@ Moksha  Features:
 * Truetype anti-aliased font support
 * Window auto-cleanup support
 * Graphical on-line help.
-</longdescription>
+	</longdescription>
   <use>
     <flag name="pango">Enable pango font rendering</flag>
     <flag name="xrandr">Enable support for the X xrandr extension</flag>
