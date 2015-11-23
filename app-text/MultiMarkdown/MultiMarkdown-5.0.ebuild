@@ -20,17 +20,7 @@ doc? (
 		app-doc/doxygen
 )"
 
-# custom variables
-DEST_DIR_EXE="/usr/bin"
-DEST_DIR_XSLT_TEMPL="/usr/share/${PN}/XSLT/"
-
-# known file collision with sys-fs/mtools on file /usr/bin/mmd
-# this is not fatal, the script is only a simple shortcut, so we just skip the
-# file ... mmd2all  mmd2pdf are also excluded (todo re-test them)
-SHORTCUTS_LIST="mmd2tex mmd2opml mmd2odf"
-
-src_install()
-{
+src_install() {
 	insinto ${DEST_DIR_EXE}
 	einfo "Installing multimarkdown binary to ${DEST_DIR_EXE}/multimarkdown ..."
 	dobin multimarkdown || die "Install failed"

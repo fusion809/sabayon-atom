@@ -65,14 +65,7 @@ src_compile(){
 }
 
 src_install(){
-	insinto ${EPREFIX}/usr/share/${PN}
-	doins -r ${T}/Atom/*
-	insinto ${EPREFIX}/usr/share/applications
-	newins resources/linux/Atom.desktop atom.desktop
-	insinto ${EPREFIX}/usr/share/pixmaps
-	newins resources/app-icons/stable/png/128.png atom.png
-	insinto ${EPREFIX}/usr/share/licenses/${PN}
-	doins LICENSE.md
+	script/grunt install --install-dir /usr
 	# Fixes permissions
 	fperms +x ${EPREFIX}/usr/share/${PN}/${PN}
 	fperms +x ${EPREFIX}/usr/share/${PN}/libffmpegsumo.so
