@@ -22,6 +22,6 @@ RDEPEND="app-arch/bzip2
         sys-devel/gettext
         sys-devel/libtool
         sys-devel/make
-        sys-devel/qmake
+        sys-devel/qconf
         sys-libs/libstdc++-v3"
 DEPEND=""
