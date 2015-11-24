@@ -37,7 +37,7 @@ pkg_setup() {
 }
 
 src_compile(){
-	./script/build --build-dir "${T}" || die "Failed to compile"
+	until ./script/build --build-dir "${T}"; do :; done || die "Failed to compile"
 	"${T}/Atom/resources/app/apm/bin/apm" rebuild || die "Failed to rebuild native module"
 	echo "python = $PYTHON" >> "${T}/Atom/resources/app/apm/.apmrc"
 }
