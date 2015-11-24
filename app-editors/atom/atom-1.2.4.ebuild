@@ -36,6 +36,22 @@ pkg_setup() {
 	npm config set python $PYTHON
 }
 
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-python.patch"
+sed -i  -e "/exception-reporting/d" \
+	-e "/metrics/d" package.json
+sed -e "s/<%= description %>/$pkgdesc/" \
+	-e "s|<%= installDir %>/share/<%= appFileName %>/atom|/usr/bin/atom|"\
+	-e "s|<%= iconPath %>|atom|"\
+	-e "s|<%= appName %>|Atom|" \
+	resources/linux/atom.desktop.in > resources/linux/Atom.desktop
+
+		# Fix atom location guessing
+sed -i -e 's/ATOM_PATH="$USR_DIRECTORY\/share\/atom/ATOM_PATH="$USR_DIRECTORY\/../g' \
+	./atom.sh \
+	|| die "Fail fixing atom-shell directory"
+}
+
 src_compile(){
 	until ./script/build --build-dir "${T}"; do :; done || die "Failed to compile"
 	"${T}/Atom/resources/app/apm/bin/apm" rebuild || die "Failed to rebuild native module"
