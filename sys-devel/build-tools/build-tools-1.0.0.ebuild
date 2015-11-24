@@ -7,7 +7,7 @@ EAPI=5
 DESCRIPTION="Tools for building C and C++ programs"
 LICENSE="metapackage"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm"
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="sys-devel/base-gcc
         app-arch/bzip2
