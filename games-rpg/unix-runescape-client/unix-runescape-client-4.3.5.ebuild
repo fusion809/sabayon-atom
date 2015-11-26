@@ -24,6 +24,7 @@ DEPEND="virtual/jre
 		dev-perl/Config-IniFiles
 		dev-perl/IO-stringy
 		dev-perl/wxperl
+		media-libs/libpng:1.2
 		net-misc/wget
 		alsa-oss? ( media-libs/alsa-oss )
 		cario-nogl? ( x11-libs/cairo[-opengl] )
