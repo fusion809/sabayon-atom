@@ -21,6 +21,7 @@ IUSE="alsa-oss cario-nogl p7zip pulseaudio wine"
 DEPEND="virtual/jre
 		dev-lang/perl
 		dev-perl/Archive-Extract
+		media-libs/libpng:1.2
 		dev-perl/Config-IniFiles
 		dev-perl/IO-stringy
 		dev-perl/wxperl
