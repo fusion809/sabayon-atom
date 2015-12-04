@@ -1,4 +1,5 @@
 # Copyright 2015- Brenton Horne <brentonhorne77@gmail.com>
+# DESCRIPTION was taken from http://pkgbuild.com/git/aur-mirror.git/tree/mdocml/PKGBUILD
 
 EAPI=5
 DESCRIPTION="mandoc is a suite of tools compiling mdoc, the roff macro language and man manuals."
@@ -7,7 +8,6 @@ RESTRICT="mirror"
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
 SRC_URI="http://mdocml.bsd.lv/snapshots/${PN}-${PV}.tar.gz -> ${PV}.tar.gz"
 DEPEND="dev-db/sqlite"
 
@@ -15,16 +15,15 @@ src_prepare() {
   true
 }
 
+src_configure() {
+  econf
+}
+
 src_compile() {
-  cd ${PN}-${PV}
-  ./configure --prefix=/usr
-  make
+  emake
 }
 
 src_install() {
-  cd ${PN}-${PV}
-
-  make DESTDIR="${D}" install -j1
-
+  emake -j1
   install -Dm644 LICENSE ${D}/usr/share/licenses/${PN}/LICENSE
 }
