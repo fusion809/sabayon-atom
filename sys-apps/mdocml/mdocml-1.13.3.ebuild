@@ -24,6 +24,6 @@ src_compile() {
 }
 
 src_install() {
-  emake -j1
+  emake -j1 DESTDIR=${D} install
   install -Dm644 LICENSE ${D}/usr/share/licenses/${PN}/LICENSE
 }
