@@ -24,7 +24,7 @@ src_compile() {
 src_install() {
   cd ${PN}-${PV}
 
-  make DESTDIR="/" install -j1
+  make DESTDIR="${D}" install -j1
 
-  install -Dm644 LICENSE /usr/share/licenses/${PN}/LICENSE
+  install -Dm644 LICENSE ${D}/usr/share/licenses/${PN}/LICENSE
 }
