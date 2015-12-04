@@ -54,7 +54,9 @@ RDEPEND="
 		>=x11-libs/libxkbcommon-0.3.1
 	)
 	>=dev-libs/efl-1.15.2[X]
-	>=media-libs/elementary-1.15
+	>=media-libs/elementary-1.15.2
+	>=media-plugins/emotion_generic_players-1.16.0
+	>=media-plugins/evas_generic_loaders-1.16.0
 	x11-libs/xcb-util-keysyms"
 DEPEND="${RDEPEND}"
 
