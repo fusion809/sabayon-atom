@@ -11,16 +11,28 @@ KEYWORDS="~amd64 ~x86"
 SRC_URI="http://mdocml.bsd.lv/snapshots/${PN}-${PV}.tar.gz -> ${PV}.tar.gz"
 DEPEND="dev-db/sqlite"
 
-src_prepare() {
-  true
-}
-
 src_configure() {
-  econf
+  cat << END > "configure.local"
+    PREFIX="/usr"
+    SBINDIR="/usr/bin"
+    MANDIR="/usr/share/man"
+    EXAMPLEDIR="/usr/share/mandoc/examples"
+    BINM_MAN="mman"
+    BINM_APROPOS="mapropos"
+    BINM_WHATIS="mwhatis"
+    MANM_MAN="mandoc_man"
+    MANM_MDOC="mandoc_mdoc"
+    MANM_ROFF="mandoc_roff"
+    # default cflags
+    $(grep -m1 'CFLAGS=' configure)
+    # add our cflags
+    CFLAGS="${CFLAGS} $CFLAGS"
+  END
+  ./configure
 }
 
 src_compile() {
-  emake DESTDIR=${D}
+  emake
 }
 
 src_install() {
