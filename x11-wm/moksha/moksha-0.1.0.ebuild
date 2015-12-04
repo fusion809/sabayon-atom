@@ -17,7 +17,7 @@ else
 SRC_URI="https://github.com/JeffHoogland/${PN}/archive/${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
 fi
 KEYWORDS="~amd64 ~arm ~x86"
-
+RESTRICT="mirror"
 SLOT="0"
 
 # The @ is just an anchor to expand from
