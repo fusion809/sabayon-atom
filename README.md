@@ -26,6 +26,7 @@ equo i -av <PACKAGE>
 although it is important to ensure their file extension is `.tbz2`, downloading from my dropbox will likely give you a file name ending with `?dl=1`, which you will need to remove in order to install the binary with `equo`.
 ### List of binaries I have made
 * [Atom][7]: [atom-bin-1.2.2][8]
+* [mdocml][20]: [mdocml-1.13.3][21]
 * [Onboard][3]: [onboard-1.1.2][14]
 * [Scilab][9]: [scilab-bin-5.5.2][10]
 * [Unix RuneScape Client][11]:
@@ -52,3 +53,5 @@ although it is important to ensure their file extension is `.tbz2`, downloading 
 [17]: https://github.com/fusion809/sabayon-tools/tree/master/app-editors/atom-bin
 [18]: https://github.com/fusion809/sabayon-tools/tree/master/app-editors/atom
 [19]: https://github.com/fusion809/sabayon-tools/tree/master/media-gfx/wkhtmltopdf
+[20]: http://mdocml.bsd.lv/
+[21]: https://www.dropbox.com/s/ss8bw9entq93jqx/sys-apps%3Amdocml-1.13.3.747fa5621c1fb651ae9b5206f418d3cd23b178cc~9999.tbz2?dl=1

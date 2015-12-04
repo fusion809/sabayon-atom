@@ -24,12 +24,12 @@ S=${WORKDIR}/moksha-modules-extra-master/deskshow
 
 src_configure() {
   pushd $S
-  ./autogen.sh --prefix=/usr
+  ./autogen.sh --prefix=${D}/usr
   popd
 }
 
 src_compile() {
   pushd $S
-	V=1 emake || die
+	V=1 emake DESTDIR=${T} || die
   popd
 }
