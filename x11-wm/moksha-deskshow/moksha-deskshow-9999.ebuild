@@ -24,7 +24,7 @@ S=${WORKDIR}/moksha-modules-extra-master/deskshow
 
 src_configure() {
   pushd $S
-  ./autogen.sh --prefix=${D}/usr
+  ./autogen.sh --prefix=${D}/usr --includedir=/usr/include/enlightenment/
   popd
 }
 
