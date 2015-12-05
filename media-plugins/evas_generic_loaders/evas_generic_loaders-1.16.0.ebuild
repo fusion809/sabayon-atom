@@ -22,7 +22,7 @@ RESTRICT="mirror"
 LICENSE="GPL-2"
 IUSE="gstreamer pdf postscript raw svg"
 
-RDEPEND=">=dev-libs/efl-${PV}
+RDEPEND=">=dev-libs/efl-1.15.2
 	gstreamer? (
 		media-libs/gstreamer:1.0
 		media-libs/gst-plugins-base:1.0
