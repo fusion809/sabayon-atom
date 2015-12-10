@@ -30,7 +30,7 @@ although it is important to ensure their file extension is `.tbz2`, downloading 
 * [libsdl2][24]: [libsdl2-2.0.3-r200][25]
 * [Onboard][3]: [onboard-1.1.2][14]
 * [Scilab][9]: [scilab-bin-5.5.2][10]
-* [SuperTux][22]: [supertux-9999][23] (built 11 December 2015), requires libsdl2 (which is built with `static-libs` USE flag enabled)
+* [SuperTux][22]: [supertux-9999][23] (built 11 December 2015), requires libsdl2 (which is built with the `static-libs` USE flag enabled)
 * [Unix RuneScape Client][11]:
  - [unix-runescape-client-4.3.4][12]
  - [unix-runescape-client-4.3.5][13]
