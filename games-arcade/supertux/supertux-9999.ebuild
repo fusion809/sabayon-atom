@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}"
 DOCS="WHATSNEW.txt data/credits.txt"
 
 src_unpack() {
-	git-r3_fetch
+	git-r3_src_unpack
 }
 
 src_prepare() {
