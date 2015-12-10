@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 cmake-utils eutils games
+inherit git-r3 cmake-utils eutils games
 
 #CMAKE_IN_SOURCE_BUILD=1
 
@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}"
 DOCS="WHATSNEW.txt data/credits.txt"
 
 src_unpack() {
-	git-2_src_unpack
+	git-r3_fetch
 }
 
 src_prepare() {
