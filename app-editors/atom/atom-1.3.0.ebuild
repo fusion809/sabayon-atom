@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
+# $id$
 
 EAPI=5
 
@@ -9,7 +9,7 @@ inherit flag-o-matic python-any-r1 eutils
 
 DESCRIPTION="A hackable text editor for the 21st Century"
 HOMEPAGE="https://atom.io"
-SRC_URI="https://github.com/atom/atom/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/atom/atom/archive/v${PV}.tar.gz -> ${PV}.tar.gz"
 RESTRICT="mirror"
 LICENSE="MIT"
 SLOT="0"
@@ -36,11 +36,25 @@ pkg_setup() {
 	npm config set python $PYTHON
 }
 
-src_prepare() {
-		# Fix atom location guessing
-sed -i -e 's/ATOM_PATH="$USR_DIRECTORY\/share\/atom/ATOM_PATH="$USR_DIRECTORY\/../g' \
-	./atom.sh \
-	|| die "Fail fixing atom-shell directory"
+src_prepare(){
+	epatch "${FILESDIR}/${PN}-python.patch"
+	sed -i  -e "/exception-reporting/d" \
+		-e "/metrics/d" package.json
+	sed -e "s/<%= description %>/$pkgdesc/" \
+		-e "s|<%= installDir %>/share/<%= appFileName %>/atom|/usr/bin/atom|"\
+		-e "s|<%= iconPath %>|atom|"\
+		-e "s|<%= appName %>|Atom|" \
+		resources/linux/atom.desktop.in > resources/linux/Atom.desktop
+
+    	# Fix atom location guessing
+	sed -i -e 's/ATOM_PATH="$USR_DIRECTORY\/share\/atom/ATOM_PATH="$USR_DIRECTORY\/../g' \
+		./atom.sh \
+		|| die "Fail fixing atom-shell directory"
+
+	# Make bootstrap process more verbose
+	sed -i -e 's@node script/bootstrap@node script/bootstrap --no-quiet@g' \
+		./script/build \
+		|| die "Fail fixing verbosity of script/build"
 }
 
 src_compile(){
@@ -50,10 +64,16 @@ src_compile(){
 }
 
 src_install(){
-	script/grunt install --install-dir ${D}/usr
+	insinto ${EPREFIX}/usr/share/${PN}
+	doins -r ${T}/Atom/*
+	insinto ${EPREFIX}/usr/share/applications
+	newins resources/linux/Atom.desktop atom.desktop
+	insinto ${EPREFIX}/usr/share/pixmaps
+	newins resources/app-icons/stable/png/128.png atom.png
+	insinto ${EPREFIX}/usr/share/licenses/${PN}
+	doins LICENSE.md
 	# Fixes permissions
 	fperms +x ${EPREFIX}/usr/share/${PN}/${PN}
-	fperms +x ${EPREFIX}/usr/share/${PN}/libffmpegsumo.so
 	fperms +x ${EPREFIX}/usr/share/${PN}/libgcrypt.so.11
 	fperms +x ${EPREFIX}/usr/share/${PN}/libnotify.so.4
 	fperms +x ${EPREFIX}/usr/share/${PN}/resources/app/atom.sh
