@@ -50,7 +50,7 @@ src_compile(){
 }
 
 src_install(){
-	script/grunt install --install-dir /usr
+	script/grunt install --install-dir ${D}/usr
 	# Fixes permissions
 	fperms +x ${EPREFIX}/usr/share/${PN}/${PN}
 	fperms +x ${EPREFIX}/usr/share/${PN}/libffmpegsumo.so
