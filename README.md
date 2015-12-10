@@ -6,7 +6,7 @@ layman -a sabayon-tools
 
 ## ebuilds
 ### [Atom][7]
-[app-editors/atom-bin][17] is designed to install Atom from official Debian package releases. I do not use [app-editors/atom][18] to build binaries because it is more likely to generate build errors and takes over an hour.
+[app-editors/atom-bin][17] is designed to install Atom from official Debian package releases. I did not use [app-editors/atom][18] to build binaries because it is more likely to generate build errors (usually related to momentary network connectivity issues) and takes over an hour, but I have fixed it now so that it should work even with intermittent network issues, although it still takes over an hour to build.
 
 ### [FFMpegThumbs-MattePaint][1]
 [kde-apps/ffmpegthumbs-mattepaint][2] is a program that when installed (and enabled by going to **Control**&rarr;**Configure Dolphin...**&rarr;**General**&rarr;**Previews** and selecting in the "Show previews for:" box, "Video Files (ffmpegthumbs-mattepaint)") should allow video file thumbnailing (or previews) in Dolphin.
@@ -25,10 +25,12 @@ equo i -av <PACKAGE>
 ```
 although it is important to ensure their file extension is `.tbz2`, downloading from my dropbox will likely give you a file name ending with `?dl=1`, which you will need to remove in order to install the binary with `equo`.
 ### List of binaries I have made
-* [Atom][7]: [atom-bin-1.2.2][8]
+* [Atom][7]: [atom-1.3.0][8]
 * [mdocml][20]: [mdocml-1.13.3][21]
+* [libsdl2][24]: [libsdl2-2.0.3-r200][25]
 * [Onboard][3]: [onboard-1.1.2][14]
 * [Scilab][9]: [scilab-bin-5.5.2][10]
+* [SuperTux][22]: [supertux-9999][23] (built 11 December 2015), requires libsdl2 (which is built with `static-libs` USE flag enabled)
 * [Unix RuneScape Client][11]:
  - [unix-runescape-client-4.3.4][12]
  - [unix-runescape-client-4.3.5][13]
@@ -41,7 +43,7 @@ although it is important to ensure their file extension is `.tbz2`, downloading 
 [5]: https://github.com/shiznix/unity-gentoo "unity-gentoo overlay"
 [6]: https://github.com/killer2tester/gentoo-overlay-lif "lif overlay"
 [7]: https://atom.io "Atom Homepage"
-[8]: https://www.dropbox.com/s/sgs8tp42bscudh8/app-editors%3Aatom-bin-1.2.2.98b318676ff357a385e1a37384a608f3f3d238cd~9999.tbz2?dl=1 "atom-bin-1.2.2"
+[8]: https://www.dropbox.com/s/m8ba7czj6qgdrk3/app-editors%3Aatom-1.3.0.b73cba2dec1da9b877613855d8cb36750e7a571c~9999.tbz2?dl=1 "atom-1.3.0"
 [9]: http://www.scilab.org/ "Scilab Homepage"
 [10]: https://www.dropbox.com/s/yvchmmmh7p9xr4t/sci-mathematics%3Ascilab-bin-5.5.2.5b475dc664c2b92996a1ea93d1d9311582acc19c~9999.tbz2?dl=1 "scilab-bin-5.5.2.tbz2"
 [11]: https://github.com/HikariKnight/rsu-client "RSU Client"
@@ -55,3 +57,7 @@ although it is important to ensure their file extension is `.tbz2`, downloading 
 [19]: https://github.com/fusion809/sabayon-tools/tree/master/media-gfx/wkhtmltopdf
 [20]: http://mdocml.bsd.lv/
 [21]: https://www.dropbox.com/s/6rtocr8pvlye42d/sys-apps%3Amdocml-1.13.3.4832159b405274e18d182022f5a1078e9264ef34~9999.tbz2?dl=1
+[22]: https://supertux.github.io
+[23]: https://www.dropbox.com/s/f15deh262vxyvgz/games-arcade%3Asupertux-9999.2f958e19204a534886e8d64237f4ebdcc789b6a7~9999.tbz2?dl=1
+[24]: http://libsdl.org/
+[25]: https://www.dropbox.com/s/tcmkrev1clj466s/media-libs%3Alibsdl2-2.0.3-r200.de6a4e9c25a65ffdf29115c3b9aaad7ff9abb48b~9999.tbz2?dl=1
