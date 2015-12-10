@@ -13,7 +13,7 @@ HOMEPAGE="http://supertux.github.io"
 SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/SuperTux/supertux"
-EGIT_HAS_SUBMODULES=true
+EGIT_HAS_SUBMODULES=1
 LICENSE="GPL-2"
 SLOT="2"
 KEYWORDS=""
