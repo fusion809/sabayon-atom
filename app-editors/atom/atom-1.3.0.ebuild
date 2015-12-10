@@ -44,7 +44,7 @@ sed -i -e 's/ATOM_PATH="$USR_DIRECTORY\/share\/atom/ATOM_PATH="$USR_DIRECTORY\/.
 }
 
 src_compile(){
-	if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then die "Build failed"; fi; fi; fi; fi
+	if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then die "Build failed"; fi; fi; fi; fi; fi; fi; fi
 	"${T}/Atom/resources/app/apm/bin/apm" rebuild || die "Failed to rebuild native module"
 	echo "python = $PYTHON" >> "${T}/Atom/resources/app/apm/.apmrc"
 }
