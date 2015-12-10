@@ -58,7 +58,7 @@ src_prepare(){
 }
 
 src_compile(){
-	if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then if ! ./script/build --build-dir "${T}"; then die "Build failed"; fi; fi; fi; fi; fi; fi; fi
+	if ! ./script/build --verbose --build-dir "${T}"; then if ! ./script/build --verbose --build-dir "${T}"; then if ! ./script/build --verbose --build-dir "${T}"; then if ! ./script/build --verbose --build-dir "${T}"; then if ! ./script/build --verbose --build-dir "${T}"; then if ! ./script/build --verbose --build-dir "${T}"; then if ! ./script/build --verbose --build-dir "${T}"; then die "Build failed"; fi; fi; fi; fi; fi; fi; fi
 	"${T}/Atom/resources/app/apm/bin/apm" rebuild || die "Failed to rebuild native module"
 	echo "python = $PYTHON" >> "${T}/Atom/resources/app/apm/.apmrc"
 }
