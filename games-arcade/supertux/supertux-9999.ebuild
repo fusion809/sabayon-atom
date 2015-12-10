@@ -21,7 +21,7 @@ IUSE="opengl curl debug"
 RDEPEND="dev-games/physfs
 	dev-libs/boost
 	media-libs/glew
-	media-libs/libsdl2[joystick]
+	media-libs/libsdl2[joystick,static-libs]
 	media-libs/sdl2-image[png,jpeg]
 	media-libs/libvorbis
 	media-libs/openal
