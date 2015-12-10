@@ -30,7 +30,7 @@ RDEPEND="dev-games/physfs
 	opengl? ( virtual/opengl )"
 DEPEND="${RDEPEND}"
 
-DOCS="WHATSNEW.txt data/credits.txt"
+DOCS="NEWS.md README.md docs/levelguidelines.txt data/credits.txt"
 
 src_unpack() {
 	git-r3_src_unpack
