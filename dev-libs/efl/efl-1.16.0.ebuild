@@ -246,7 +246,8 @@ src_configure() {
 		--disable-xinput22
 		--disable-multisense
 		--enable-libmount
-
+		--enable-physics
+		
 		# external lz4 support currently broken because of unstable ABI/API
 		#--enable-liblz4
 	)
