@@ -191,8 +191,6 @@ src_configure() {
 		$(use_with X x)
 		--with-opengl=$(usex opengl full $(usex gles es none))
 		--with-glib=$(usex glib)
-		--enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aba
-
 		$(use_enable bmp image-loader-bmp)
 		$(use_enable bmp image-loader-wbmp)
 		$(use_enable drm)
