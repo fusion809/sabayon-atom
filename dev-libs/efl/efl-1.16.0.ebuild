@@ -186,11 +186,13 @@ src_configure() {
 
 	E_ECONF=(
 		--with-profile=$(usex debug debug release)
-		--with-crypto=$(usex ssl openssl none)
+		--with-crypto=$(usex gnutls gnutls $(usex ssl openssl none))
 		--with-x11=$(usex X xlib none)
 		$(use_with X x)
 		--with-opengl=$(usex opengl full $(usex gles es none))
 		--with-glib=$(usex glib)
+		$(use_enable bmp image-loader-bmp)
+		$(use_enable bmp image-loader-wbmp)
 		$(use_enable drm)
 		$(use_enable doc)
 		$(use_enable eet image-loader-eet)
