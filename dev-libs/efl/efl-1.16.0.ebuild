@@ -237,8 +237,8 @@ src_configure() {
 		--enable-drm \
 		--enable-drm-gl \
 		--enable-fb \
-		--enable-gstreamer \
-		--disable-gstreamer1 \
+		--disable-gstreamer \
+		--enable-gstreamer1 \
 		--enable-harfbuzz \
 		--disable-silent-rules \
 		--disable-static \
