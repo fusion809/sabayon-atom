@@ -37,21 +37,31 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	>=dev-libs/libinput-0.8
-	media-libs/mesa[gbm]
-	>=x11-libs/libdrm-2.4
-	>=x11-libs/libxkbcommon-0.3.0
+	drm? (
+		>=dev-libs/libinput-0.8
+		media-libs/mesa[gbm]
+		>=x11-libs/libdrm-2.4
+		>=x11-libs/libxkbcommon-0.3.0
+	)
 	fontconfig? ( media-libs/fontconfig )
 	fribidi? ( dev-libs/fribidi )
 	gif? ( media-libs/giflib )
 	glib? ( dev-libs/glib:2 )
-	dev-libs/openssl
-	media-libs/gstreamer:1.0
-	media-libs/gst-plugins-base:1.0
-	media-libs/harfbuzz
+	gnutls? ( net-libs/gnutls )
+	!gnutls? (
+		ssl? (
+			!libressl? ( dev-libs/openssl:0 )
+			libressl? ( dev-libs/libressl )
+		)
+	)
+	gstreamer? (
+		media-libs/gstreamer:1.0
+		media-libs/gst-plugins-base:1.0
+	)
+	harfbuzz? ( media-libs/harfbuzz )
 	ibus? ( app-i18n/ibus )
 	jpeg2k? ( media-libs/openjpeg:0 )
-	>=dev-lang/luajit-2.0.0
+	!oldlua? ( >=dev-lang/luajit-2.0.0 )
 	oldlua? ( dev-lang/lua )
 	physics? ( >=sci-physics/bullet-2.80 )
 	pixman? ( x11-libs/pixman )
@@ -65,11 +75,13 @@ RDEPEND="
 	sound? ( media-libs/libsndfile )
 	systemd? ( sys-apps/systemd )
 	tiff? ( media-libs/tiff:0 )
-	x11-libs/tslib
+	tslib? ( x11-libs/tslib )
 	valgrind? ( dev-util/valgrind )
-	>=dev-libs/wayland-1.8.0
-	>=x11-libs/libxkbcommon-0.3.1
-	media-libs/mesa[gles2,wayland]
+	wayland? (
+		>=dev-libs/wayland-1.8.0
+		>=x11-libs/libxkbcommon-0.3.1
+		media-libs/mesa[gles2,wayland]
+	)
 	webp? ( media-libs/libwebp )
 	X? (
 		x11-libs/libXcursor
@@ -174,13 +186,16 @@ src_configure() {
 
 	E_ECONF=(
 		--with-profile=$(usex debug debug release)
-		--with-crypto=$(usex ssl openssl none)
+		--with-crypto=$(usex gnutls gnutls $(usex ssl openssl none))
 		--with-x11=$(usex X xlib none)
 		$(use_with X x)
 		--with-opengl=$(usex opengl full $(usex gles es none))
 		--with-glib=$(usex glib)
+		--enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aba
+
 		$(use_enable bmp image-loader-bmp)
 		$(use_enable bmp image-loader-wbmp)
+		$(use_enable drm)
 		$(use_enable doc)
 		$(use_enable eet image-loader-eet)
 		$(use_enable egl)
@@ -214,6 +229,7 @@ src_configure() {
 		$(use_enable systemd)
 		$(use_enable tga image-loader-tga)
 		$(use_enable tiff image-loader-tiff)
+		$(use_enable tslib)
 		$(use_enable v4l2)
 		$(use_enable valgrind)
 		$(use_enable wayland)
@@ -221,20 +237,18 @@ src_configure() {
 		$(use_enable xim)
 		$(use_enable xine)
 		$(use_enable xpm image-loader-xpm)
-		--enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aba \
-		--enable-drm \
-		--enable-drm-gl \
-		--enable-fb \
-		--disable-gstreamer \
-		--enable-gstreamer1 \
-		--enable-harfbuzz \
-		--disable-silent-rules \
-		--disable-static \
-		--enable-systemd \
-		--disable-tslib \
-		--enable-xine \
-		--disable-xinput2 \
-		--enable-wayland \
+		--enable-cserve
+		--enable-image-loader-generic
+		--enable-image-loader-jpeg
+
+		--disable-tizen
+		--disable-gesture
+		--disable-gstreamer
+		--enable-xinput2
+		--disable-xinput22
+		--disable-multisense
+		--enable-libmount
+
 		# external lz4 support currently broken because of unstable ABI/API
 		#--enable-liblz4
 	)
