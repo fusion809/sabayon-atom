@@ -221,13 +221,18 @@ src_configure() {
 		$(use_enable pulseaudio)
 		$(use_enable scim)
 		$(use_enable sdl)
+		$(use_enable sound audio)
 		$(use_enable systemd)
+		$(use_enable tga image-loader-tga)
 		$(use_enable tiff image-loader-tiff)
 		$(use_enable tslib)
 		$(use_enable v4l2)
+		$(use_enable valgrind)
 		$(use_enable wayland)
+		$(use_enable webp image-loader-webp)
 		$(use_enable xim)
 		$(use_enable xine)
+		$(use_enable xpm image-loader-xpm)
 		--enable-cserve
 		--enable-image-loader-generic
 		--enable-image-loader-jpeg
