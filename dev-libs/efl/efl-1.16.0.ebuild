@@ -46,7 +46,8 @@ RDEPEND="
 	gif? ( media-libs/giflib )
 	glib? ( dev-libs/glib:2 )
 	dev-libs/openssl
-	media-libs/gstreamer:1
+	media-libs/gstreamer:1.0
+	media-libs/gst-plugins-base:1.0
 	media-libs/harfbuzz
 	ibus? ( app-i18n/ibus )
 	jpeg2k? ( media-libs/openjpeg:0 )
