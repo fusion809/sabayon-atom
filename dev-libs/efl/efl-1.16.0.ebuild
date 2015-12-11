@@ -246,7 +246,6 @@ src_configure() {
 		--disable-tslib \
 		--enable-xine \
 		--disable-xinput2 \
-		--enable-wayland \
 		# external lz4 support currently broken because of unstable ABI/API
 		#--enable-liblz4
 	)
