@@ -37,31 +37,20 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	drm? (
-		>=dev-libs/libinput-0.8
-		media-libs/mesa[gbm]
-		>=x11-libs/libdrm-2.4
-		>=x11-libs/libxkbcommon-0.3.0
-	)
+	>=dev-libs/libinput-0.8
+	media-libs/mesa[gbm]
+	>=x11-libs/libdrm-2.4
+	>=x11-libs/libxkbcommon-0.3.0
 	fontconfig? ( media-libs/fontconfig )
 	fribidi? ( dev-libs/fribidi )
 	gif? ( media-libs/giflib )
 	glib? ( dev-libs/glib:2 )
-	gnutls? ( net-libs/gnutls )
-	!gnutls? (
-		ssl? (
-			!libressl? ( dev-libs/openssl:0 )
-			libressl? ( dev-libs/libressl )
-		)
-	)
-	gstreamer? (
-		media-libs/gstreamer:1.0
-		media-libs/gst-plugins-base:1.0
-	)
-	harfbuzz? ( media-libs/harfbuzz )
+	dev-libs/openssl
+	media-libs/gstreamer:1
+	media-libs/harfbuzz
 	ibus? ( app-i18n/ibus )
 	jpeg2k? ( media-libs/openjpeg:0 )
-	!oldlua? ( >=dev-lang/luajit-2.0.0 )
+	>=dev-lang/luajit-2.0.0
 	oldlua? ( dev-lang/lua )
 	physics? ( >=sci-physics/bullet-2.80 )
 	pixman? ( x11-libs/pixman )
@@ -75,13 +64,11 @@ RDEPEND="
 	sound? ( media-libs/libsndfile )
 	systemd? ( sys-apps/systemd )
 	tiff? ( media-libs/tiff:0 )
-	tslib? ( x11-libs/tslib )
+	x11-libs/tslib
 	valgrind? ( dev-util/valgrind )
-	wayland? (
-		>=dev-libs/wayland-1.8.0
-		>=x11-libs/libxkbcommon-0.3.1
-		media-libs/mesa[gles2,wayland]
-	)
+	>=dev-libs/wayland-1.8.0
+	>=x11-libs/libxkbcommon-0.3.1
+	media-libs/mesa[gles2,wayland]
 	webp? ( media-libs/libwebp )
 	X? (
 		x11-libs/libXcursor
@@ -246,6 +233,7 @@ src_configure() {
 		--disable-tslib \
 		--enable-xine \
 		--disable-xinput2 \
+		--enable-wayland \
 		# external lz4 support currently broken because of unstable ABI/API
 		#--enable-liblz4
 	)
