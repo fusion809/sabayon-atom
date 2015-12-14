@@ -6,8 +6,6 @@ EAPI=5
 
 inherit git-r3 cmake-utils eutils games
 
-#CMAKE_IN_SOURCE_BUILD=1
-
 DESCRIPTION="Classic 2D jump'n run sidescroller game in a style similar to the original Super Mario Bros."
 HOMEPAGE="http://supertux.github.io"
 SRC_URI=""
