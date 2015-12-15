@@ -12,15 +12,22 @@ SRC_URI="http://download.opensuse.org/repositories/home:/warlordfff/openSUSE_Fac
 RESTRICT="mirror"
 LICENSE="CC-BY-SA-3.0"
 KEYWORDS="~amd64 ~x86"
+IUSE=""
+RDEPEND=""
+DEPEND=""
 
 SLOT="0"
 
-src_unpack() {
+S=${WORKDIR}/community-supplemental-wallpaper/43
+
+src_prepare() {
   src_unpack
   unpack ./43.tar.xz
+  cd ${S}
 }
 
 src_install() {
-  insinto /usr/share/wallpapers
-  doins *.jpg *.png
+  mkdir -p ${D}/usr/share/wallpapers/${PN}
+  cp -r * ${D}/usr/share/wallpapers/${PN}/
+  cp -a ../community-supplemental-wallpaper-43.desktop ${D}/usr/share/wallpapers/${PN}/metadata.desktop
 }
