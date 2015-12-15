@@ -8,12 +8,11 @@ inherit git-r3 cmake-utils eutils games
 
 DESCRIPTION="Classic 2D jump'n run sidescroller game in a style similar to the original Super Mario Bros."
 HOMEPAGE="http://supertux.github.io"
-SRC_URI=""
-
 EGIT_REPO_URI="https://github.com/SuperTux/supertux"
+
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="opengl curl debug"
 
 RDEPEND="dev-games/physfs
