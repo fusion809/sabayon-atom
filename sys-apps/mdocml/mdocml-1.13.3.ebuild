@@ -10,6 +10,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 SRC_URI="http://mdocml.bsd.lv/snapshots/${PN}-${PV}.tar.gz -> ${PV}.tar.gz"
 DEPEND="dev-db/sqlite"
+RDEPEND="${DEPEND}
+        !sys-apps/man-db"
 
 src_configure() {
   cat << END > "configure.local"
