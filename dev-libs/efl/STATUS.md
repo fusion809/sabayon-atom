@@ -1,4 +1,7 @@
-ebuild status: fails to build.
+ebuild status: fails to build, with the default USE flags. The USE flags I have managed to compile this package with are:
+```bash
+=dev-libs/efl-1.16.0 -gnutls ssl -libressl physics drm glib gstreamer harfbuzz ibus webp tslib -pulseaudio
+```
 
 `emerge --info ...` gives:
 ```bash

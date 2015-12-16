@@ -26,6 +26,8 @@ src_prepare() {
   cd ${S}
 }
 
+src_compile() { :; }
+
 src_install() {
   mkdir -p ${D}/usr/share/wallpapers/${PN}
   cp -r * ${D}/usr/share/wallpapers/${PN}/
