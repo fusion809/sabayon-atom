@@ -30,6 +30,8 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+S=${WORKDIR}/atom-${PV%.*}-beta${PV##*.}
+
 pkg_setup() {
 	python-any-r1_pkg_setup
 
