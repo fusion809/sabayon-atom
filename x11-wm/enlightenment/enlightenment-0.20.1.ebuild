@@ -57,7 +57,10 @@ RDEPEND="
 	>=media-libs/elementary-1.15.2
 	>=media-plugins/emotion_generic_players-1.16.0
 	>=media-plugins/evas_generic_loaders-1.16.0
-	x11-libs/xcb-util-keysyms"
+	x11-libs/xcb-util-keysyms
+	enlightenment_modules_connman? ( net-misc/connman
+	dev-python/python-efl )
+	enlightenment_modules_mixer? ( >=media-libs/alsa-lib-1.0.8 )"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/${MY_P}
