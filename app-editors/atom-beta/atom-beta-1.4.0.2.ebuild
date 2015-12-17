@@ -75,7 +75,7 @@ src_install(){
 	insinto ${EPREFIX}/usr/share/licenses/${PN}
 	doins LICENSE.md
 	# Fixes permissions
-	fperms +x ${EPREFIX}/usr/share/${PN}/${PV%-****}
+	fperms +x ${EPREFIX}/usr/share/${PN}/${PN%-****}
 	fperms +x ${EPREFIX}/usr/share/${PN}/libgcrypt.so.11
 	fperms +x ${EPREFIX}/usr/share/${PN}/libnotify.so.4
 	fperms +x ${EPREFIX}/usr/share/${PN}/resources/app/atom.sh
