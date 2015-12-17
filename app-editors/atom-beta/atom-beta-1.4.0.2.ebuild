@@ -43,9 +43,9 @@ src_prepare(){
 	sed -i  -e "/exception-reporting/d" \
 		-e "/metrics/d" package.json
 	sed -e "s/<%= description %>/$pkgdesc/" \
-		-e "s|<%= installDir %>/share/<%= appFileName %>/atom|/usr/bin/atom|"\
-		-e "s|<%= iconPath %>|atom|"\
-		-e "s|<%= appName %>|Atom|" \
+		-e "s|<%= installDir %>/share/<%= appFileName %>/atom-beta|/usr/bin/atom-beta|"\
+		-e "s|<%= iconPath %>|atom-beta|"\
+		-e "s|<%= appName %>|Atom Beta|" \
 		resources/linux/atom.desktop.in > resources/linux/Atom.desktop
 
     	# Fix atom location guessing
@@ -69,9 +69,9 @@ src_install(){
 	insinto ${EPREFIX}/usr/share/${PN}
 	doins -r ${T}/Atom/*
 	insinto ${EPREFIX}/usr/share/applications
-	newins resources/linux/Atom.desktop atom.desktop
+	newins resources/linux/Atom.desktop atom-beta.desktop
 	insinto ${EPREFIX}/usr/share/pixmaps
-	newins resources/app-icons/stable/png/128.png atom.png
+	newins resources/app-icons/stable/png/128.png atom-beta.png
 	insinto ${EPREFIX}/usr/share/licenses/${PN}
 	doins LICENSE.md
 	# Fixes permissions
@@ -83,6 +83,6 @@ src_install(){
 	fperms +x ${EPREFIX}/usr/share/${PN}/resources/app/apm/bin/node
 	fperms +x ${EPREFIX}/usr/share/${PN}/resources/app/apm/node_modules/npm/bin/node-gyp-bin/node-gyp
 	# Symlinking to /usr/bin
-	dosym ${EPREFIX}/usr/share/${PN}/resources/app/atom.sh /usr/bin/atom
-	dosym ${EPREFIX}/usr/share/${PN}/resources/app/apm/bin/apm /usr/bin/apm
+	dosym ${EPREFIX}/usr/share/${PN}/resources/app/atom.sh /usr/bin/atom-beta
+	dosym ${EPREFIX}/usr/share/${PN}/resources/app/apm/bin/apm /usr/bin/apm-beta
 }
