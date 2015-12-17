@@ -1,5 +1,6 @@
 # Copyright 2015- Brenton Horne <brentonhorne77@gmail.com>
-# DESCRIPTION was taken from http://pkgbuild.com/git/aur-mirror.git/tree/mdocml/PKGBUILD
+# DESCRIPTION and the configure.local section was taken from
+# http://pkgbuild.com/git/aur-mirror.git/tree/mdocml/PKGBUILD
 
 EAPI=5
 DESCRIPTION="mandoc is a suite of tools compiling mdoc, the roff macro language and man manuals."
