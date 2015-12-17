@@ -9,7 +9,7 @@ inherit flag-o-matic python-any-r1 eutils
 
 DESCRIPTION="A hackable text editor for the 21st Century"
 HOMEPAGE="https://atom.io"
-SRC_URI="https://github.com/atom/atom/archive/v${PV%.*}-beta${PV##*.}.tar.gz -> atom-${PV%.*}-beta${PV##*.}.tar.gz"
+SRC_URI="https://github.com/atom/atom/archive/v${PV%.*}-beta${PV##*.}.tar.gz -> ${PN%-****}-${PV%.*}-beta${PV##*.}.tar.gz"
 RESTRICT="mirror"
 LICENSE="MIT"
 SLOT="1"
@@ -75,7 +75,7 @@ src_install(){
 	insinto ${EPREFIX}/usr/share/licenses/${PN}
 	doins LICENSE.md
 	# Fixes permissions
-	fperms +x ${EPREFIX}/usr/share/${PN}/atom
+	fperms +x ${EPREFIX}/usr/share/${PN}/${PV%-****}
 	fperms +x ${EPREFIX}/usr/share/${PN}/libgcrypt.so.11
 	fperms +x ${EPREFIX}/usr/share/${PN}/libnotify.so.4
 	fperms +x ${EPREFIX}/usr/share/${PN}/resources/app/atom.sh
