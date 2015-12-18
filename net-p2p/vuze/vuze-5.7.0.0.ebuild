@@ -61,7 +61,6 @@ java_prepare() {
 	epatch "${FILESDIR}"/${PN}-5.3.0.0-java5.patch
 	epatch "${FILESDIR}"/${PN}-5.3.0.0-remove-classpath.patch
 	epatch "${FILESDIR}"/${PN}-5.3.0.0-disable-shared-plugins.patch
-	epatch "${FILESDIR}"/${PN}-5.3.0.0-disable-osx.patch
 	epatch "${FILESDIR}"/${PN}-5.3.0.0-disable-updaters.patch
 	epatch "${FILESDIR}"/${PN}-5.3.0.0-unbundle-commons.patch
 	epatch "${FILESDIR}"/${PN}-5.3.0.0-unbundle-json.patch
