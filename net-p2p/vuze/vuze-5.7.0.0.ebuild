@@ -101,7 +101,7 @@ src_compile() {
 	java-pkg-2_src_compile
 
 	# bug #302058 - build.xml excludes .txt but upstream jar has it...
-	jar uf dist/Azureus2.jar ChangeLog.txt || die
+	#jar uf dist/Azureus2.jar ChangeLog.txt || die
 }
 
 src_install() {
