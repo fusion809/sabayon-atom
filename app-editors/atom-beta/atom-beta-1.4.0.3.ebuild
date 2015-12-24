@@ -12,7 +12,7 @@ HOMEPAGE="https://atom.io"
 SRC_URI="https://github.com/atom/atom/archive/v${PV%.*}-beta${PV##*.}.tar.gz -> ${PN%-****}-${PV%.*}-beta${PV##*.}.tar.gz"
 RESTRICT="mirror"
 LICENSE="MIT"
-SLOT="1"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
