@@ -18,7 +18,7 @@ fi
 inherit enlightenment
 
 DESCRIPTION="Enlightenment DR17 window manager"
-RESTRICT="mirror"
+RESTRICT="primaryuri"
 LICENSE="BSD-2"
 KEYWORDS="~amd64 ~arm ~x86"
 SLOT="0.17/${PV%%_*}"

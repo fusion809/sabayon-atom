@@ -18,10 +18,9 @@ inherit enlightenment
 
 DESCRIPTION="Basic widget set, based on EFL for mobile touch-screen devices"
 HOMEPAGE="https://trac.enlightenment.org/e/wiki/Elementary"
-RESTRICT="mirror"
+RESTRICT="primaryuri"
 LICENSE="LGPL-2.1"
 IUSE="debug examples fbcon quicklaunch sdl wayland X static-libs"
-
 DEPEND=">=dev-libs/efl-${PV}[fbcon?,sdl?,png,wayland?,X?]"
 RDEPEND="${DEPEND}"
 

@@ -18,7 +18,7 @@ inherit enlightenment
 
 DESCRIPTION="Provides external applications as generic loaders for Evas"
 HOMEPAGE="https://www.enlightenment.org/"
-
+RESTRICT="primaryuri"
 LICENSE="GPL-2"
 IUSE="gstreamer pdf postscript raw svg"
 
