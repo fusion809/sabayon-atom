@@ -172,6 +172,7 @@ src_prepare() {
 		-e '/sleep 10/d' \
 		-e '/^#### Work around bug in automake check macro$/,/^#### Info$/d' \
 		configure || die
+	epatch "${FILESDIR}/${PN}-emiles.patch"
 }
 
 src_configure() {
@@ -185,7 +186,7 @@ src_configure() {
 	fi
 
 	E_ECONF=(
-		--with-profile=$(usex debug debug release)
+f		--with-profile=$(usex debug debug release)
 		--with-crypto=$(usex gnutls gnutls $(usex ssl openssl none))
 		--with-x11=$(usex X xlib none)
 		$(use_with X x)
