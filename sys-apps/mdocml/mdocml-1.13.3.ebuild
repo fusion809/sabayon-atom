@@ -1,4 +1,4 @@
-# Copyright 2015- Brenton Horne <brentonhorne77@gmail.com>
+# Copyright 2015-2016 Brenton Horne <brentonhorne77@gmail.com>
 # DESCRIPTION and the configure.local section was taken from
 # http://pkgbuild.com/git/aur-mirror.git/tree/mdocml/PKGBUILD
 

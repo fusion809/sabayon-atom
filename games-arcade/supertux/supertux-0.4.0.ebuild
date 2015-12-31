@@ -1,50 +1,41 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
+inherit cmake-utils games
 
-inherit cmake-utils eutils games
-
-DESCRIPTION="Classic 2D jump'n run sidescroller game in a style similar to the original Super Mario Bros."
-HOMEPAGE="http://supertux.github.io"
-SRC_URI="https://github.com/SuperTux/supertux/releases/download/v${PV}/${PN}-${PV}.tar.bz2"
-RESTRICT="mirror"
-LICENSE="GPL-2"
-SLOT="2"
+DESCRIPTION="A game similar to Super Mario Bros."
+HOMEPAGE="http://supertuxproject.org/"
+SRC_URI="https://github.com/SuperTux/${PN}/releases/download/v${PV}/${P}.tar.bz2"
+RESTRICT="primaryuri"
+LICENSE="GPL-2+ GPL-3+ ZLIB MIT CC-BY-SA-2.0 CC-BY-SA-3.0"
+SLOT="1"
 KEYWORDS="~amd64 ~x86"
-IUSE="opengl curl debug"
+IUSE="debug"
 
 RDEPEND="dev-games/physfs
-	dev-libs/boost
-	media-libs/glew
-	media-libs/libsdl2[joystick,static-libs]
-	media-libs/sdl2-image[png,jpeg]
+	dev-libs/boost:=
+	media-libs/glew:=
+	virtual/opengl
 	media-libs/libvorbis
 	media-libs/openal
-	x11-libs/libXt
-	curl? ( net-misc/curl )
-	opengl? ( virtual/opengl )"
-DEPEND="${RDEPEND}"
+	>=media-libs/libsdl2-2.0.1[joystick,video]
+	>=media-libs/sdl2-image-2.0.0[png,jpeg]
+	>=net-misc/curl-7.21.7"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
-DOCS="NEWS.md README.md docs/levelguidelines.txt data/credits.txt"
-
-src_unpack() {
-	src_unpack
-}
-
-src_prepare() {
-	sed -e "/Icon=/s/supertux.png/supertux2/" \
-		-i supertux2.desktop || die
-}
+PATCHES=( "${FILESDIR}"/${P}-{obstack,tinygettext,squirrel,desktop,flags,license,icon}.patch )
 
 src_configure() {
-	local mycmakeargs="-DWERROR=OFF \
-			-DINSTALL_SUBDIR_BIN=games/bin \
-			-DINSTALL_SUBDIR_DOC=share/doc/${P} \
-			$(cmake-utils_use_enable opengl OPENGL) \
-			$(cmake-utils_use_enable debug SQDBG) \
-			$(cmake-utils_use debug DEBUG)"
+	local mycmakeargs=(
+		-DWERROR=OFF
+		-DINSTALL_SUBDIR_BIN=games/bin
+		-DINSTALL_SUBDIR_DOC=share/doc/${PF}
+		$(cmake-utils_use_enable debug SQDBG)
+		$(cmake-utils_use debug)
+	)
 
 	cmake-utils_src_configure
 }
@@ -55,13 +46,5 @@ src_compile() {
 
 src_install() {
 	cmake-utils_src_install
-
-	pushd "${D}/usr/share/pixmaps" &>/dev/null || die
-	local ext
-	for ext in png xpm ; do
-		mv ${PN}{,2}.${ext} || die
-	done
-	popd &>/dev/null || die
-
 	prepgamesdirs
 }

@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,13 +18,12 @@ inherit enlightenment
 
 DESCRIPTION="Provides external applications as generic loaders for Evas"
 HOMEPAGE="https://www.enlightenment.org/"
-RESTRICT="mirror"
 
 LICENSE="GPL-2"
 # The -arch need to keyword vlc first.
 KEYWORDS="-alpha ~amd64 ~arm -hppa -ia64 ~mips ~ppc ~ppc64 ~sh -sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-interix ~x86-solaris ~x64-solaris"
 
-RDEPEND=">=dev-libs/efl-1.15.2
+RDEPEND=">=dev-libs/efl-${PV}
 	media-video/vlc"
 DEPEND="${RDEPEND}"
 

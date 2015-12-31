@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -18,11 +18,11 @@ inherit enlightenment
 
 DESCRIPTION="Provides external applications as generic loaders for Evas"
 HOMEPAGE="https://www.enlightenment.org/"
-RESTRICT="mirror"
+
 LICENSE="GPL-2"
 IUSE="gstreamer pdf postscript raw svg"
 
-RDEPEND=">=dev-libs/efl-1.15.2
+RDEPEND=">=dev-libs/efl-${PV}
 	gstreamer? (
 		media-libs/gstreamer:1.0
 		media-libs/gst-plugins-base:1.0

@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,7 +7,7 @@ EAPI=5
 inherit git-r3 cmake-utils eutils games
 
 DESCRIPTION="Classic 2D jump'n run sidescroller game in a style similar to the original Super Mario Bros."
-HOMEPAGE="http://supertux.github.io"
+HOMEPAGE="http://supertuxproject.org"
 EGIT_REPO_URI="https://github.com/SuperTux/supertux"
 
 LICENSE="GPL-2"
