@@ -34,6 +34,8 @@ DEPEND="${RDEPEND}
 	app-arch/unzip
 	doc? ( >=dev-python/sphinx-0.6.0[${PYTHON_USEDEP}] )"
 
+PATCHES=( "${FILESDIR}"/${PN}-2.3.1-build.patch )
+
 python_compile_all() {
 	if use doc; then
 		sphinx-build doc doc/html || die "Generation of documentation failed"
